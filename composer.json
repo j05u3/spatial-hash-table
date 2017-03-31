@@ -1,0 +1,18 @@
+{
+    "name": "josue/spatial-hash-table",
+    "description": "2D hash table for fast edges-touching-circle retrieval",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["hash table","2d-hash table","spatial query", "spatial"],
+    "homepage": "https://github.com/Seldaek/monolog",
+    "authors": [
+        {
+            "name": "josue.0",
+            "email": "josueajc@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+        "php": ">=7.0.15"
+    }
+}
