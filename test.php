@@ -55,3 +55,5 @@ $b->addElement(new Edge(new Point(1.25, 1.5), new Point( 0.5, 0.75), 200));
 $b->outputHashTable();
 
 echo "\n";
+
+var_dump($b->getAllElementIdsInCircle(new Point(0,0)));

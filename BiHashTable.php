@@ -190,7 +190,7 @@ class BiHashTable
      * @param Point $a
      * @return array in which the keys are the ids and the values are the elements
      */
-    public function getAllElementIdsInArea(Point &$a) {
+    public function getAllElementIdsInCircle(Point $a) {
         $tx = 0; $ty = 0;
         $this->getTileIndex($a, $tx, $ty);
         $mSet = [];
@@ -199,6 +199,10 @@ class BiHashTable
                 if (isset(($this->t)[$i]) && isset(($this->t)[$i][$j])) {
                     foreach (($this->t)[$i][$j] as $id => $dummy) {
                         $mSet[$id] = ($this->els)[$id];
+                        // TODO: check distance to agree with len
+                        /*if () {
+
+                        }*/
                     }
                 }
             }
