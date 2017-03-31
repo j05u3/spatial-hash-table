@@ -100,15 +100,21 @@ class Point
     }
 
     public static function distToLine(Point &$A, Point &$B, Point &$P) {
-        return abs(cross($A, $B, $P))/self::dist($A, $B);
+        return abs(self::cross($A, $B, $P))/self::dist($A, $B);
     }
 
     public static function distToSegment(Point &$A, Point &$B, Point &$P) {
-        $mini = min(self::dist($A, $P), self::dist($B, $P));
-        $distToLine = self::distToLine($A, $B, $P);
-        if (self::dist($P)) {
-            // TODO: complete this
-            return 3;
+        $da = self::dist($A, $P);
+        $db = self::dist($B, $P);
+        $mini = min($da, $db);
+        $h = self::distToLine($A, $B, $P);
+
+        $b = self::dist($A, $B);
+        $maxHypot2 = $b*$b + $h*$h;
+        if ($da*$da > $maxHypot2 || $db*$db > $maxHypot2) {
+            return $mini;
         }
+
+        return min($mini, $h);
     }
 }

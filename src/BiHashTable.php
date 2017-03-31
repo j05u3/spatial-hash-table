@@ -141,6 +141,11 @@ class BiHashTable
 
                 $this->addIdToTile($etx, $ety, $e->id);
 
+            } else {
+                $tx = 0;
+                $ty = 0;
+                $this->getTileIndex($e, $tx, $ty);
+                $this->addIdToTile($tx, $ty, $e->id);
             }
 
         } else {
@@ -186,11 +191,11 @@ class BiHashTable
     }
 
     /**
-     *
+     * Returns all elements that intersect the circle centered in $a with radius $len
      * @param Point $a
      * @return array in which the keys are the ids and the values are the elements
      */
-    public function getAllElementIdsInCircle(Point $a) {
+    public function getAllElementsInCircle(Point $a) {
         $tx = 0; $ty = 0;
         $this->getTileIndex($a, $tx, $ty);
         $mSet = [];
@@ -198,11 +203,16 @@ class BiHashTable
             for ($j = -1 + $ty; $j < 2 + $ty; $j++) {
                 if (isset(($this->t)[$i]) && isset(($this->t)[$i][$j])) {
                     foreach (($this->t)[$i][$j] as $id => $dummy) {
-                        $mSet[$id] = ($this->els)[$id];
-                        // TODO: check distance to agree with len
-                        /*if () {
-
-                        }*/
+                        if (($this->els)[$id] instanceof Edge) {
+                            if (Point::distToSegment((($this->els)[$id])->p1, (($this->els)[$id])->p2, $a) <= $this->len) {
+                                $mSet[$id] = ($this->els)[$id];
+                                //echo "dist: " . Point::distToSegment((($this->els)[$id])->p1, (($this->els)[$id])->p2, $a) . " id : ".$id."\n";
+                            }
+                        } else {
+                            if (Point::dist(($this->els)[$id], $a) <= $this->len) {
+                                $mSet[$id] = ($this->els)[$id];
+                            }
+                        }
                     }
                 }
             }
