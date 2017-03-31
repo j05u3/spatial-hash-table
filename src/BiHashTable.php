@@ -1,7 +1,9 @@
 <?php
 
-use SupportedGeometries\Edge;
-use SupportedGeometries\Point;
+namespace SpatialHashTable;
+
+use SpatialHashTable\SupportedGeometries\Edge;
+use SpatialHashTable\SupportedGeometries\Point;
 
 class BiHashTable
 {

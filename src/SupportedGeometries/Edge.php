@@ -6,7 +6,7 @@
  * Time: 8:13 PM
  */
 
-namespace SupportedGeometries;
+namespace SpatialHashTable\SupportedGeometries;
 
 class Edge
 {

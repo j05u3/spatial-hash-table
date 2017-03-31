@@ -6,7 +6,7 @@
  * Time: 8:17 PM
  */
 
-namespace SupportedGeometries;
+namespace SpatialHashTable\SupportedGeometries;
 
 
 class Point

@@ -9,8 +9,9 @@ require_once "src/BiHashTable.php";
 require_once "src/SupportedGeometries/Edge.php";
 require_once "src/SupportedGeometries/Point.php";
 
-use SupportedGeometries\Edge;
-use SupportedGeometries\Point;
+use SpatialHashTable\BiHashTable;
+use SpatialHashTable\SupportedGeometries\Edge;
+use SpatialHashTable\SupportedGeometries\Point;
 
 
 $b = new BiHashTable(1);
