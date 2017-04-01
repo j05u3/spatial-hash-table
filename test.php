@@ -5,9 +5,9 @@
  * Date: 3/30/17
  * Time: 9:43 PM
  */
-require_once "src/BiHashTable.php";
-require_once "src/SupportedGeometries/Edge.php";
-require_once "src/SupportedGeometries/Point.php";
+require_once "src/SpatialHashTable/BiHashTable.php";
+require_once "src/SpatialHashTable/SupportedGeometries/Edge.php";
+require_once "src/SpatialHashTable/SupportedGeometries/Point.php";
 
 use SpatialHashTable\BiHashTable;
 use SpatialHashTable\SupportedGeometries\Edge;
@@ -49,7 +49,7 @@ echo "\n";
 
 $b = new BiHashTable(1);
 
-$b->addElement(new Edge(new Point(1.5, 1), new Point( 0.5, 0.5), 100));
+$b->addElement(new Edge(new Point(-1.5, -1), new Point( -0.5, -0.5), 100));
 $b->addElement(new Edge(new Point(1.25, 1.5), new Point( 0.5, 0.75), 200));
 $b->addElement(new Edge(new Point(1.75, 1.75), new Point( 1.75, 1.25), 300));
 $b->addElement(new Point(0.5, 0.5, 400));
