@@ -28,66 +28,43 @@ $b->addElement(new Edge(new Point(1.75, 1.75), new Point( 1.75, 1.25), 300));
 $b->addElement(new Point(0.5, 0.5, 400));
 
 
-var_dump($b->getAllElementsInCircle(new Point(0,0)));
-/**
-array(3) {
-  [100]=>
-  object(SpatialHashTable\SupportedGeometries\Edge)#3 (3) {
-    ["id"]=>
-    int(100)
-    ["p1"]=>
-    object(SpatialHashTable\SupportedGeometries\Point)#10 (3) {
-      ["id"]=>
-      int(0)
-      ["x"]=>
-      float(-1.5)
-      ["y"]=>
-      float(-1)
+echo json_encode($b->getAllElementsInCircle(new Point(0,0)));
+
+```
+And the output is: 
+
+```json
+{
+  "100": {
+    "id": 100,
+    "p1": {
+      "id": 0,
+      "x": -1.5,
+      "y": -1
+    },
+    "p2": {
+      "id": 0,
+      "x": -0.5,
+      "y": -0.5
     }
-    ["p2"]=>
-    object(SpatialHashTable\SupportedGeometries\Point)#5 (3) {
-      ["id"]=>
-      int(0)
-      ["x"]=>
-      float(-0.5)
-      ["y"]=>
-      float(-0.5)
+  },
+  "200": {
+    "id": 200,
+    "p1": {
+      "id": 0,
+      "x": 1.25,
+      "y": 1.5
+    },
+    "p2": {
+      "id": 0,
+      "x": 0.5,
+      "y": 0.75
     }
-  }
-  [200]=>
-  object(SpatialHashTable\SupportedGeometries\Edge)#9 (3) {
-    ["id"]=>
-    int(200)
-    ["p1"]=>
-    object(SpatialHashTable\SupportedGeometries\Point)#8 (3) {
-      ["id"]=>
-      int(0)
-      ["x"]=>
-      float(1.25)
-      ["y"]=>
-      float(1.5)
-    }
-    ["p2"]=>
-    object(SpatialHashTable\SupportedGeometries\Point)#4 (3) {
-      ["id"]=>
-      int(0)
-      ["x"]=>
-      float(0.5)
-      ["y"]=>
-      float(0.75)
-    }
-  }
-  [400]=>
-  object(SpatialHashTable\SupportedGeometries\Point)#12 (3) {
-    ["id"]=>
-    int(400)
-    ["x"]=>
-    float(0.5)
-    ["y"]=>
-    float(0.5)
+  },
+  "400": {
+    "id": 400,
+    "x": 0.5,
+    "y": 0.5
   }
 }
-
-**/
-
 ```
