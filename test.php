@@ -59,12 +59,12 @@ $b->outputHashTable();
 
 echo "\n";
 
-var_dump($b->getAllElementsInCircle(new Point(0,0)));
+echo json_encode($b->getAllElementsInCircle(new Point(0, 0)))."\n";
 
-var_dump($b->getAllElementsInCircle(new Point(2,0)));
+echo json_encode($b->getAllElementsInCircle(new Point(2,0)))."\n";
 
-var_dump($b->getAllElementsInCircle(new Point(2,1)));
+echo json_encode($b->getAllElementsInCircle(new Point(2,1)))."\n";
 
-var_dump($b->getAllElementsInCircle(new Point(2,2)));
+echo json_encode($b->getAllElementsInCircle(new Point(2,2)))."\n";
 
 
