@@ -53,6 +53,7 @@ $b->addElement(new Edge(new Point(-1.5, -1), new Point( -0.5, -0.5), 100));
 $b->addElement(new Edge(new Point(1.25, 1.5), new Point( 0.5, 0.75), 200));
 $b->addElement(new Edge(new Point(1.75, 1.75), new Point( 1.75, 1.25), 300));
 $b->addElement(new Point(0.5, 0.5, 400));
+$b->addElement(new Edge(new Point(0.5, 0.5), new Point(0.5, 0.5), 500));
 
 // inverted tricky one
 $b->outputHashTable();

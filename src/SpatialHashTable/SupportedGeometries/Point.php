@@ -100,7 +100,9 @@ class Point
     }
 
     public static function distToLine(Point &$A, Point &$B, Point &$P) {
-        return abs(self::cross($A, $B, $P))/self::dist($A, $B);
+        $distAB = self::dist($A, $B);
+        if ($distAB == 0) return self::dist($A, $P);
+        return abs(self::cross($A, $B, $P))/$distAB;
     }
 
     public static function distToSegment(Point &$A, Point &$B, Point &$P) {
