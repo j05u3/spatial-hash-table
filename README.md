@@ -7,6 +7,10 @@ Using [Composer](https://getcomposer.org), just add it to your `composer.json` b
 composer require josue/spatial-hash-table
 ```
 
+## Description
+
+You can throw edges and points at it and than make fast proximity queries in a fixed radius (set in the constructor).
+
 ## Usage
 
 Example
